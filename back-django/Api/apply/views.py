@@ -62,9 +62,15 @@ def apply_post(request):
                 for file in files:
                     # 生成新的文件名
                     file_ext = os.path.splitext(file.original_name)[1]
-                    timestamp = str(int(time.time()))  # 获取当前时间戳
+                    # timestamp = str(int(time.time()))  # 获取当前时间戳
                     # new_filename = f"{apply_obj.applicationType}_{apply_obj.university}_{apply_obj.name}-{timestamp}{file_ext}"
-                    new_filename = f"{apply_obj.university}-{apply_obj.name}-{timestamp}{file_ext}"
+                    import os
+
+                    # 提取文件名和扩展名（假设 file.name 是带扩展名的完整文件名）
+                    filename_without_ext, _ = os.path.splitext(file.name)
+
+                    # 构建新的文件名（只使用一次扩展名）
+                    new_filename = f"{filename_without_ext}-{apply_obj.applicantType}{file_ext}"
                     
                     # 获取文件的目录路径
                     dir_path = os.path.dirname(file.file_path)
