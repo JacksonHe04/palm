@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # 移到最前面
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,17 +54,21 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = "ApplicationSystem.urls"
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS 配置
+CORS_ORIGIN_ALLOW_ALL = False  # 改为 False，使用白名单模式
 CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = ['https://palm.inon.space', 'http://joinpalm.inon.space', 'http://palm.inon.space', 'https://palm-ams.vercel.app', '139.155.248.15']
-CORS_ALLOWED_ORIGINS = ['https://palm.inon.space', 'http://joinpalm.inon.space', 'http://palm.inon.space', 'https://palm-ams.vercel.app', '139.155.248.15']
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    'https://palm.inon.space',
+    'http://joinpalm.inon.space',
+    'http://palm.inon.space',
+    'https://palm-ams.vercel.app',
+    'http://139.155.248.15',
+    'https://139.155.248.15'
+]
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
