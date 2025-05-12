@@ -8,16 +8,9 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# 获取当前目录的绝对路�?
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '39lpa05#hgfg0b01)b*xs-rlg8&6*x^w8&4wi8va%)=axo6h4m'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['139.155.248.15', 'palm.inon.space', 'localhost', 'joinpalm.inon.space']
@@ -68,8 +61,8 @@ ROOT_URLCONF = "ApplicationSystem.urls"
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = ['https://palm.inon.space', 'http://localhost:5173', 'http://joinpalm.inon.space', 'http://palm.inon.space']
-# CORS_ALLOWED_ORIGINS = ['https://palm.inon.space', 'http://localhost:5173', 'http://joinpalm.inon.space', 'http://palm.inon.space']
+CSRF_TRUSTED_ORIGINS = ['https://palm.inon.space', 'http://joinpalm.inon.space', 'http://palm.inon.space', 'https://palm-ams.vercel.app', '139.155.248.15']
+CORS_ALLOWED_ORIGINS = ['https://palm.inon.space', 'http://joinpalm.inon.space', 'http://palm.inon.space', 'https://palm-ams.vercel.app', '139.155.248.15']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_METHODS = [
     'DELETE',
