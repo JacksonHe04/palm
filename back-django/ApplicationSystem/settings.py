@@ -67,7 +67,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://palm.inon.space',
     'https://palm-ams.vercel.app',
     'http://139.155.248.15',
-    'https://139.155.248.15'
+    'https://139.155.248.15',
+    'http://localhost:5173'
 ]
 CORS_ALLOW_METHODS = [
     'DELETE',

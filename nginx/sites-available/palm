@@ -30,20 +30,18 @@ server {
         include uwsgi_params;
         uwsgi_pass 127.0.0.1:8001;
         
-        # 更新 CORS 响应头配置
-        add_header 'Access-Control-Allow-Origin' $http_origin always;
-        add_header 'Access-Control-Allow-Credentials' 'true' always;
-        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PUT, DELETE, PATCH' always;
-        add_header 'Access-Control-Allow-Headers' 'Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With,X-Applicant-ID' always;
+        # 确保响应头只设置一次
+        more_set_headers -s '200 201 204' 'Access-Control-Allow-Origin: $http_origin';
+        more_set_headers -s '200 201 204' 'Access-Control-Allow-Credentials: true';
+        more_set_headers -s '200 201 204' 'Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE, PATCH';
+        more_set_headers -s '200 201 204' 'Access-Control-Allow-Headers: Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With,X-Applicant-ID';
         
-        # 处理 OPTIONS 请求
+        # OPTIONS 请求处理
         if ($request_method = 'OPTIONS') {
-            add_header 'Access-Control-Allow-Origin' $http_origin always;
-            add_header 'Access-Control-Allow-Credentials' 'true' always;
-            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS, PUT, DELETE, PATCH' always;
-            add_header 'Access-Control-Allow-Headers' 'Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With,X-Applicant-ID' always;
-            add_header 'Content-Type' 'text/plain charset=UTF-8';
-            add_header 'Content-Length' 0;
+            more_set_headers -s '204' 'Access-Control-Allow-Origin: $http_origin';
+            more_set_headers -s '204' 'Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE, PATCH';
+            more_set_headers -s '204' 'Access-Control-Allow-Headers: Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With,X-Applicant-ID';
+            more_set_headers -s '204' 'Access-Control-Allow-Credentials: true';
             return 204;
         }
     }

@@ -10,6 +10,10 @@
         <RouterLink to="/join">
           <el-button type="primary" size="large">申请加入我们</el-button>
         </RouterLink>
+        <!-- 另一个按钮 -->
+        <RouterLink to="/lark">
+          <el-button type="primary" size="large">申请加入我们（稳定版通道）</el-button>
+        </RouterLink>
       </div>
       <!-- <p class="trial-text">
         ✉️ We will send an email to notify you after your resume is approved.

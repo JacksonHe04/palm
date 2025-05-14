@@ -30,6 +30,12 @@ const router = createRouter({
           component: () => import("@/views/front-desk/join/index.vue"),
           meta: { title: "加入 PALM 实验室" },
         },
+        // lark
+        {
+          path: "/lark",
+          component: () => import("@/views/front-desk/lark/index.vue"),
+          meta: { title: "PALM实验室群" },
+        },
         // apply
         {
           path: "/apply",
