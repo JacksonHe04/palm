@@ -11,7 +11,6 @@
 
 ## 地址
 - 通用地址：https://palm.inon.space
-- 海外地址：https://palm-ams.vercel.app
 - IP地址：http://139.155.248.15
 
 ## 技术栈

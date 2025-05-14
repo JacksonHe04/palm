@@ -78,9 +78,19 @@ const router = createRouter({
           component: () => import("@/views/login/index.vue"),
           meta: { title: "登录 PALM 实验室" },
         },
+        // admin
         {
           path: "/admin",
-          redirect: "/admin/result",
+          component: () => import("@/views/front-desk/admin/index.vue"),          
+        },
+        // lark
+        {
+          path: "/lark",
+          component: () => import("@/views/front-desk/lark/index.vue"),          
+        },
+        {
+          path: "/manage",
+          redirect: "/manage/result",
           component: () => import("@/views/management/index.vue"),
           meta: { title: "PALM实验室后台管理" },
           children: [
@@ -216,7 +226,7 @@ router.beforeEach(async (to, from, next) => {
   }
   
   // 需要登录的路由
-  const requiresAuth = to.path.startsWith('/admin');
+  const requiresAuth = to.path.startsWith('/manage');
   
   if (requiresAuth) {
     // 检查是否登录且会话有效
@@ -233,7 +243,7 @@ router.beforeEach(async (to, from, next) => {
   } else {
     // 如果已登录且会话有效，访问登录页时重定向到管理页面
     if (to.path === '/login' && userStore.isAuthenticated && userStore.isValidSession) {
-      next('/admin');
+      next('/manage');
     } else {
       next();
     }

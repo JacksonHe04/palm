@@ -13,7 +13,7 @@ SECRET_KEY = '39lpa05#hgfg0b01)b*xs-rlg8&6*x^w8&4wi8va%)=axo6h4m'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['139.155.248.15', 'palm.inon.space', 'localhost', 'joinpalm.inon.space']
+ALLOWED_HOSTS = ['139.155.248.15', 'palm.inon.space', 'joinpalm.inon.space']
 # ALLOWED_HOSTS = []
 
 # Application definition
@@ -59,7 +59,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = "ApplicationSystem.urls"
 
 # CORS 配置
-CORS_ORIGIN_ALLOW_ALL = False  # 改为 False，使用白名单模式
+CORS_ORIGIN_ALLOW_ALL = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     'https://palm.inon.space',
@@ -68,7 +68,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://palm-ams.vercel.app',
     'http://139.155.248.15',
     'https://139.155.248.15',
-    'http://localhost:5173'
+    # 'http://localhost:5173'
 ]
 CORS_ALLOW_METHODS = [
     'DELETE',

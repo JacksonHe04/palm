@@ -10,7 +10,7 @@ server {
     # SSL 默认访问端口号为 443
     listen 443 ssl;
     # 请填写绑定证书的域名
-    server_name 139.155.248.15 palm.inon.space joinpalm.inon.space;
+    server_name palm.inon.space;
     # 请填写证书文件的相对路径或绝对路径
     ssl_certificate /etc/nginx/palm.inon.space_bundle.crt;
     # 请填写私钥文件的相对路径或绝对路径

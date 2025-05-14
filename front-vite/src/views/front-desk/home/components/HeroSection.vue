@@ -10,39 +10,20 @@
         <RouterLink to="/join">
           <el-button type="primary" size="large">申请加入我们</el-button>
         </RouterLink>
-        <!-- 另一个按钮 -->
         <a
           href="https://icnaf3oiyzmh.feishu.cn/share/base/form/shrcnyrnWtSNrgvXi1UWw5dXJBd"
         >
-          <!-- <RouterLink to="/lark"> -->
           <el-button type="primary" size="large"
             >申请加入我们（稳定版通道）</el-button
           >
-          <!-- </RouterLink> -->
         </a>
       </div>
     </div>
-    <!-- <p class="trial-text">
-        ✉️ We will send an email to notify you after your resume is approved.
-      </p> -->
-  </div>
 
-  <div class="hero-image">
-    <div class="achievement-badge">
-      <div style="display: flex; align-items: center; gap: 8px">
-        <div>
-          <div style="font-weight: bold; font-size: 20px">100+</div>
-          <div style="font-size: 14px; color: #6b7280">Students</div>
-        </div>
-      </div>
-    </div>
-    <img src="/lib.png" alt="home-img" class="home-img" />
-    <div class="users-badge">
-      <div style="font-weight: bold; font-size: 20px">25+</div>
-      <div style="font-size: 14px; color: #6b7280">Mentors</div>
+    <div class="hero-image">
+      <img src="/lib.png" alt="home-img" class="home-img" />
     </div>
   </div>
-  <!-- </div> -->
 </template>
 
 <style scoped lang="scss">
