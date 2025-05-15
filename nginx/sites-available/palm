@@ -1,8 +1,9 @@
 # HTTP 服务器，将所有流量重定向到 HTTPS
 server {
     listen 80;
-    server_name 139.155.248.15 palm.inon.space joinpalm.inon.space;
-    return 301 https://$server_name$request_uri;
+    server_name 139.155.248.15 joinpalm.inon.space;
+    # 注释掉重定向配置，允许 HTTP 访问
+    # return 301 https://$server_name$request_uri;
 }
 
 # HTTPS 服务器

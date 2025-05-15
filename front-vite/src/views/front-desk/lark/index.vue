@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 
 // 飞书表单 URL
-const formUrl = 'https://icnaf3oiyzmh.feishu.cn/wiki/IjQ2wgNK5i8mJ0ktXvLcsBwVnUf'
+const formUrl = 'https://pcnk1dkqbzfp.feishu.cn/wiki/Wz4zw0S5NiSBKkk81SZcM4yHn7d'
 
 onMounted(() => {
   // 直接跳转（当前窗口打开）

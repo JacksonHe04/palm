@@ -10,8 +10,9 @@
         <RouterLink to="/join">
           <el-button type="primary" size="large">申请加入我们</el-button>
         </RouterLink>
+        <!-- href="https://icnaf3oiyzmh.feishu.cn/share/base/form/shrcnyrnWtSNrgvXi1UWw5dXJBd" -->
         <a
-          href="https://icnaf3oiyzmh.feishu.cn/share/base/form/shrcnyrnWtSNrgvXi1UWw5dXJBd"
+          href="https://pcnk1dkqbzfp.feishu.cn/share/base/form/shrcnva5dLKQ2kbi8LmRrrcRlsd"
         >
           <el-button type="primary" size="large"
             >申请加入我们（稳定版通道）</el-button
