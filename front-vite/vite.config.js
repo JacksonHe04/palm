@@ -38,11 +38,11 @@ export default defineConfig({
         main: fileURLToPath(new URL("./index.html", import.meta.url)),
       },
       output: {
-        // JS入口文件
-        entryFileNames: "assets/js/[name].js",
-        // 代码分割后的chunk文件
-        chunkFileNames: "assets/js/[name].js",
-        // CSS、图片等资源文件
+        // JS入口文件添加哈希
+        entryFileNames: "assets/js/[name].[hash].js",
+        // 代码分割后的chunk文件添加哈希
+        chunkFileNames: "assets/js/[name].[hash].js",
+        // CSS、图片等资源文件添加哈希
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name.split('.')
           let extType = info[info.length - 1]
@@ -53,7 +53,7 @@ export default defineConfig({
           } else if (/\.(woff2?|eot|ttf|otf)$/.test(assetInfo.name)) {
             extType = 'fonts'
           }
-          return `assets/${extType}/[name][extname]`
+          return `assets/${extType}/[name].[hash][extname]`
         },
         // 将 index.html 输出到上级目录的 template 文件夹
         dir: '../back-django/static',
