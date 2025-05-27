@@ -243,9 +243,15 @@ const { isFieldRequired, validateForm } = useFormValidation();
 const handleSubmit = async () => {
   try {
     validateForm(formData.value, applyFields.value);
-    await applyStore.submitForm();
-    ElMessage.success("申请提交成功");
-    router.push("/wait");
+    window.location.href = "https://pcnk1dkqbzfp.feishu.cn/share/base/form/shrcnva5dLKQ2kbi8LmRrrcRlsd"; // 跳转到后端提供的链接
+    const response = await applyStore.submitForm(); // 获取完整的响应
+    if (response && response.redirect_url) {
+      ElMessage.success("申请提交成功，正在跳转...");
+      window.location.href = response.redirect_url; // 跳转到后端提供的链接
+    } else {
+      ElMessage.success("申请提交成功");
+      router.push("/wait");
+    }
   } catch (error) {
     ElMessage.error(error.message || applyStore.submitError || "提交失败");
   }

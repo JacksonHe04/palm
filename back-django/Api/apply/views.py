@@ -102,5 +102,16 @@ def apply_post(request):
             return JsonResponse({'error': str(e)}, status=400)
     return JsonResponse({'error': 'Invalid request method'}, status=405)
 
+
+@csrf_exempt
+def redirect_to_form(request):
+    """
+    处理所有请求，并返回一个错误信息，引导用户跳转到指定的飞书表单链接。
+    """
+    return JsonResponse({
+        'error': '请跳转至飞书表单填写信息',
+        'redirect_url': 'https://pcnk1dkqbzfp.feishu.cn/share/base/form/shrcnva5dLKQ2kbi8LmRrrcRlsd'
+    }, status=400)
+
 def test_get(request):
     return JsonResponse({'message': 'This is a test GET request'})

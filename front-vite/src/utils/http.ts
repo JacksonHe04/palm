@@ -83,7 +83,7 @@ instance.interceptors.response.use(
     if (response) {
       switch (response.status) {
         case 401:
-          ElMessage.error('未授权，请重新登录');
+          // ElMessage.error('未授权，请重新登录');
           // 跳转到登录页面
           // window.location.href = '/login';
           // 清除本地存储的 token

@@ -7,9 +7,9 @@
         实验室隶属东南大学计算机科学与工程学院，地点位于东南大学九龙湖校区计算机楼，主要从事数据挖掘与知识发现、机器学习、模式识别以及相关领域的基础性、前沿性、创新性的研究工作。
       </p>
       <div class="email-form">
-        <RouterLink to="/join">
+        <!-- <RouterLink to="/join">
           <el-button type="primary" size="large">申请加入我们</el-button>
-        </RouterLink>
+        </RouterLink> -->
         <!-- href="https://icnaf3oiyzmh.feishu.cn/share/base/form/shrcnyrnWtSNrgvXi1UWw5dXJBd" -->
         <a
           href="https://pcnk1dkqbzfp.feishu.cn/share/base/form/shrcnva5dLKQ2kbi8LmRrrcRlsd"

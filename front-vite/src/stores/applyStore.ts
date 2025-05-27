@@ -43,8 +43,9 @@ export const useApplyStore = defineStore('apply', () => {
 
     try {
       const response = await submitApplication(formData.value)
-      resetForm()
-      return response
+      // 不再重置表单，因为可能需要根据后端响应进行跳转
+      // resetForm()
+      return response.data // 返回完整的响应数据
     } catch (error: any) {
       submitError.value = error.message || '提交失败，请稍后重试'
       throw error
