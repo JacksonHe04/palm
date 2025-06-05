@@ -80,10 +80,10 @@ export default {
             },
             {
               name: '东南大学计算机学院',
-              url: 'https://cs.sdu.edu.cn/'
+              url: 'https://cs.seu.edu.cn/'
             },
             {
-              name: '东大计软智导航',
+              name: '东大计软智常用网址',
               url: 'https://seucseweb.github.io/'
             }
           ]
