@@ -1,13 +1,13 @@
 <template>
   <FrontMain>
-    <div v-if="shouldShowNotice" class="dev-notice">
+    <!-- <div v-if="shouldShowNotice" class="dev-notice">
       <div class="custom-alert">
         <div class="alert-content">
           <div class="alert-title">网址更改提示</div>
           <div class="alert-description">由于服务器稳定性问题，网址已更改为 <a href="http://139.155.248.15">http://139.155.248.15</a></div>
         </div>
       </div>
-    </div>
+    </div> -->
     <HeroSection />
     <HomeCards />
   </FrontMain>
