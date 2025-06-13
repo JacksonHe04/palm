@@ -1,56 +1,16 @@
-# HTTP 服务器，将所有流量重定向到 HTTPS
+# HTTP 服务器配置（NOW）
 server {
     listen 80;
     server_name 139.155.248.15 joinpalm.inon.space;
-    # 注释掉重定向配置，允许 HTTP 访问
-    # return 301 https://$server_name$request_uri;
-}
 
-# HTTPS 服务器
-server {
-    # SSL 默认访问端口号为 443
-    listen 443 ssl;
-    # 请填写绑定证书的域名
-    server_name palm.inon.space;
-    # 请填写证书文件的相对路径或绝对路径
-    ssl_certificate /etc/nginx/palm.inon.space_bundle.crt;
-    # 请填写私钥文件的相对路径或绝对路径
-    ssl_certificate_key /etc/nginx/palm.inon.space.key;
-    ssl_session_timeout 5m;
-    # 请按照以下协议配置
-    ssl_protocols TLSv1.2;
-    # 请按照以下套件配置，配置加密套件，写法遵循 openssl 标准。
-    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
-    ssl_prefer_server_ciphers on;
-
-    client_max_body_size 20M;
-    client_body_buffer_size 20M;
-
-    # 处理 /api 开头的请求
-    location /api/ {
-        include uwsgi_params;
-        uwsgi_pass 127.0.0.1:8001;
-        
-        # 确保响应头只设置一次
-        more_set_headers -s '200 201 204' 'Access-Control-Allow-Origin: $http_origin';
-        more_set_headers -s '200 201 204' 'Access-Control-Allow-Credentials: true';
-        more_set_headers -s '200 201 204' 'Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE, PATCH';
-        more_set_headers -s '200 201 204' 'Access-Control-Allow-Headers: Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With,X-Applicant-ID';
-        
-        # OPTIONS 请求处理
-        if ($request_method = 'OPTIONS') {
-            more_set_headers -s '204' 'Access-Control-Allow-Origin: $http_origin';
-            more_set_headers -s '204' 'Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE, PATCH';
-            more_set_headers -s '204' 'Access-Control-Allow-Headers: Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With,X-Applicant-ID';
-            more_set_headers -s '204' 'Access-Control-Allow-Credentials: true';
-            return 204;
-        }
-    }
+    # 添加安全相关的响应头
+    add_header Cross-Origin-Opener-Policy "unsafe-none" always;
+    add_header Cross-Origin-Embedder-Policy "unsafe-none" always;
 
     location /static/ {
         alias /home/ubuntu/palm-ams/back-django/static/;
         add_header Cache-Control "public, max-age=31536000";
-
+        
         types {
             text/css css;
             application/javascript js;
@@ -58,10 +18,78 @@ server {
         }
     }
 
-    add_header Cross-Origin-Opener-Policy "same-origin";
-    add_header Cross-Origin-Embedder-Policy "require-corp";
+    location / {
+        include uwsgi_params;
+        uwsgi_pass 127.0.0.1:8001;
+    }
+}
 
-    # 处理其他请求
+# HTTPS 服务器配置 - palm.inon.space
+server {
+    listen 443 ssl;
+    server_name palm.inon.space;
+    
+    ssl_certificate /etc/nginx/palm.inon.space_bundle.crt;
+    ssl_certificate_key /etc/nginx/palm.inon.space.key;
+    ssl_session_timeout 5m;
+    ssl_protocols TLSv1.2;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+    ssl_prefer_server_ciphers on;
+
+    client_max_body_size 20M;
+    client_body_buffer_size 20M;
+
+    # 添加安全相关的响应头
+    add_header Cross-Origin-Opener-Policy "unsafe-none" always;
+    add_header Cross-Origin-Embedder-Policy "unsafe-none" always;
+
+    location /static/ {
+        alias /home/ubuntu/palm-ams/back-django/static/;
+        add_header Cache-Control "public, max-age=31536000";
+        
+        types {
+            text/css css;
+            application/javascript js;
+            image/svg+xml svg;
+        }
+    }
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass 127.0.0.1:8001;
+    }
+}
+
+# HTTPS 服务器配置 - join-server.palmlab.cn
+server {
+    listen 443 ssl;
+    server_name join-server.palmlab.cn;
+    
+    ssl_certificate /etc/nginx/join-server.palmlab.cn_bundle.crt;
+    ssl_certificate_key /etc/nginx/join-server.palmlab.cn.key;
+    ssl_session_timeout 5m;
+    ssl_protocols TLSv1.2;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+    ssl_prefer_server_ciphers on;
+
+    client_max_body_size 20M;
+    client_body_buffer_size 20M;
+
+    # 添加安全相关的响应头
+    add_header Cross-Origin-Opener-Policy "unsafe-none" always;
+    add_header Cross-Origin-Embedder-Policy "unsafe-none" always;
+
+    location /static/ {
+        alias /home/ubuntu/palm-ams/back-django/static/;
+        add_header Cache-Control "public, max-age=31536000";
+        
+        types {
+            text/css css;
+            application/javascript js;
+            image/svg+xml svg;
+        }
+    }
+
     location / {
         include uwsgi_params;
         uwsgi_pass 127.0.0.1:8001;

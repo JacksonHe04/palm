@@ -20,6 +20,7 @@ ALLOWED_HOSTS = [
     'palm-ams.vercel.app',
     'www.palmlab.cn',
     'palmlab.cn',
+    'join-server.palmlab.cn'
     # 'localhost',
     ]
 # ALLOWED_HOSTS = []
@@ -78,7 +79,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
     'https://palm-ams.vercel.app',
     'https://www.palmlab.cn',
-    'https://palmlab.cn'
+    'https://palmlab.cn',
+    'https://join-server.palmlab.cn',
 ]
 CORS_ALLOW_METHODS = [
     'DELETE',
