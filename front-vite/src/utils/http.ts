@@ -15,7 +15,8 @@ const getBaseURL = () => {
   
   // 生产环境使用实际域名
   // return 'https://palm.inon.space';
-  return `http://139.155.248.15`;
+  return 'https://join-server.palmlab.cn';
+  // return `http://139.155.248.15`;
 };
 
 // 创建 axios 实例
