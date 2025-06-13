@@ -32,6 +32,7 @@ export default defineConfig({
     assetsDir: '',
     // 设置生成的静态资源的存放路径前缀
     outDir: '../back-django/static',
+    emptyOutDir: true,
     // 将 index.html 输出到 template 目录
     rollupOptions: {
       input: {
