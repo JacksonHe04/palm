@@ -17,6 +17,9 @@ ALLOWED_HOSTS = [
     '139.155.248.15',
     'palm.inon.space',
     'joinpalm.inon.space',
+    'palm-ams.vercel.app',
+    'www.palmlab.cn',
+    'palmlab.cn',
     # 'localhost',
     ]
 # ALLOWED_HOSTS = []
@@ -70,10 +73,12 @@ CORS_ALLOWED_ORIGINS = [
     'https://palm.inon.space',
     'http://joinpalm.inon.space',
     'http://palm.inon.space',
-    'https://palm-ams.vercel.app',
     'http://139.155.248.15',
     'https://139.155.248.15',
-    'http://localhost:5173'
+    'http://localhost:5173',
+    'https://palm-ams.vercel.app',
+    'https://www.palmlab.cn',
+    'https://palmlab.cn'
 ]
 CORS_ALLOW_METHODS = [
     'DELETE',
