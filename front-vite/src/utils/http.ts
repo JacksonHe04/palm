@@ -5,18 +5,20 @@ import { useUserStore } from '@/stores/userStore';
 
 // 获取当前环境的baseURL
 const getBaseURL = () => {
-  // 获取当前页面的主机名和端口
-  const { hostname, port } = window.location;
+  // 获取当前页面的主机名、端口和协议
+  const { hostname, port, protocol } = window.location;
   
   // 判断是否在开发环境（Vite默认端口为5173）
   if (port === '5173') {
     return 'http://localhost:8000';
   }
   
-  // 生产环境使用实际域名
-  // return 'https://palm.inon.space';
-  return 'https://join-server.palmlab.cn';
-  // return `http://139.155.248.15`;
+  // 根据协议返回对应的生产环境URL
+  if (protocol === 'https:') {
+    return 'https://join-server.palmlab.cn';
+  } else {
+    return 'http://139.155.248.15';
+  }
 };
 
 // 创建 axios 实例
