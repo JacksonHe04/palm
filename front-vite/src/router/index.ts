@@ -200,6 +200,12 @@ const router = createRouter({
           component: () => import("@/views/front-desk/academics/index.vue"),
           meta: { title: "PALM实验室学术" },
         },
+        // demo
+        {
+          path: "/demo",
+          component: () => import("@/views/demo/index.vue"),
+          meta: { title: "开发者测试页面" },
+        },
         // {
         //   path: "/test",
         //   component: () => import("@/views/test/index.vue"),
