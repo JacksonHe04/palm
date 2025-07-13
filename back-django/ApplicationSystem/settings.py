@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-
-    # 以下为我们创建的应用
+    
     'Api.testapp',
     'Api.apply',
     'Api.students',

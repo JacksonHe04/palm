@@ -1,11 +1,5 @@
 *.pyc
 __pycache__/
-/.idea
-/.vscode
-/.trae
-.DS_Store
-**/.DS_Store
 /back-django/static_root
-/archive/old
+/archive
 /resourses
-/node_modules
