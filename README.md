@@ -17,6 +17,39 @@
 
 东南大学 PALM 实验室研究生招生管理系统 (PALM AMS - Pattern Learning and Mining Lab Admissions Management System) 是一个现代化的教育机构招生管理平台。系统采用前后端分离架构设计，为 PALM 实验室提供完整的招生流程管理、学生信息管理、面试评分、数据统计分析等功能，致力于提升招生工作效率，优化管理流程。
 
+### 系统主页
+<p align="center">
+  <img src="./docs/images/home.png" width="800" alt="系统主页" />
+</p>
+
+### 登录界面
+<p align="center">
+  <img src="./docs/images/login.png" width="800" alt="登录界面" />
+</p>
+
+### 筛选功能
+<p align="center">
+  <img src="./docs/images/filter_page.png" width="800" alt="筛选页面" />
+  <img src="./docs/images/filter_result.png" width="800" alt="筛选结果" />
+</p>
+
+### 面试评分
+<p align="center">
+  <img src="./docs/images/interview_score.png" width="800" alt="面试评分" />
+</p>
+
+### 数据统计
+<p align="center">
+  <img src="./docs/images/echarts.png" width="800" alt="数据统计" />
+</p>
+
+### 系统设置
+<p align="center">
+  <img src="./docs/images/account_setting.png" width="800" alt="账户设置" />
+  <img src="./docs/images/field_setting.png" width="800" alt="字段设置" />
+  <img src="./docs/images/rule_setting.png" width="800" alt="规则设置" />
+</p>
+
 ### ✨ 核心特性
 
 - 🎯 **多类型申请通道**：支持推免、考研、博士、直博四种申请类型
@@ -192,41 +225,6 @@ palm-ams/
 ├── commitlint.config.js       # 提交规范配置
 └── README.md                  # 项目说明
 ```
-
-## 📸 系统截图
-
-### 系统主页
-<p align="center">
-  <img src="./docs/images/home.png" width="800" alt="系统主页" />
-</p>
-
-### 登录界面
-<p align="center">
-  <img src="./docs/images/login.png" width="800" alt="登录界面" />
-</p>
-
-### 筛选功能
-<p align="center">
-  <img src="./docs/images/filter_page.png" width="800" alt="筛选页面" />
-  <img src="./docs/images/filter_result.png" width="800" alt="筛选结果" />
-</p>
-
-### 面试评分
-<p align="center">
-  <img src="./docs/images/interview_score.png" width="800" alt="面试评分" />
-</p>
-
-### 数据统计
-<p align="center">
-  <img src="./docs/images/echarts.png" width="800" alt="数据统计" />
-</p>
-
-### 系统设置
-<p align="center">
-  <img src="./docs/images/account_setting.png" width="800" alt="账户设置" />
-  <img src="./docs/images/field_setting.png" width="800" alt="字段设置" />
-  <img src="./docs/images/rule_setting.png" width="800" alt="规则设置" />
-</p>
 
 ## 🔧 功能模块详解
 
