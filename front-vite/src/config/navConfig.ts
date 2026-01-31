@@ -3,7 +3,8 @@ import { computed } from 'vue'
 // 定义导航项的类型
 interface NavItem {
   name: string
-  to: string
+  to?: string
+  href?: string
 }
 
 /**
@@ -15,6 +16,6 @@ export const createNavItems = (currentYear: number = new Date().getFullYear()) =
     return [
     { name: 'Home', to: '/home' },
     { name: 'Contact Us', to: '/contact' },
-    { name: `${currentYear} Join Us`, to: '/read' },
+    { name: `${currentYear} Join Us`, href: 'https://palm.seu.edu.cn/application.html' },
   ]
 }

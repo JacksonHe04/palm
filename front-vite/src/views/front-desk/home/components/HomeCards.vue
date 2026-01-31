@@ -43,20 +43,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import { useSettingStore } from "@/stores/settingStore";
+import { ref } from "vue";
 
-// 获取设置store实例
-const settingStore = useSettingStore();
-
-// 当前招生年份
-const currentAdmissionYear = ref("");
-
-// 初始化时获取年份数据
-onMounted(async () => {
-  await settingStore.fetchYear();
-  currentAdmissionYear.value = settingStore.year.year;
-});
+// 当前招生年份 - 使用默认值，避免首页加载时发起网络请求
+const currentAdmissionYear = ref("2025");
 
 // const bubbleItems = ref([
 //   "🤖 Machine Learning",

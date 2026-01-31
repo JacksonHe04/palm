@@ -7,14 +7,26 @@
       </RouterLink>
 
       <div class="hidden md:flex space-x-8">
-        <RouterLink
-          v-for="item in navItems"
-          :key="item.to"
-          :to="item.to"
-          class="text-gray-600 hover:text-gray-800"
-        >
-          {{ item.name }}
-        </RouterLink>
+        <template v-for="item in navItems">
+          <RouterLink
+            v-if="item.to"
+            :key="item.to"
+            :to="item.to"
+            class="text-gray-600 hover:text-gray-800"
+          >
+            {{ item.name }}
+          </RouterLink>
+          <a
+            v-else-if="item.href"
+            :key="item.href"
+            :href="item.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 hover:text-gray-800"
+          >
+            {{ item.name }}
+          </a>
+        </template>
       </div>
 
       <div class="md:hidden">
@@ -27,43 +39,53 @@
     </div>
 
     <div v-if="isMenuOpen" class="md:hidden bg-transparent py-4 px-4 space-y-4">
-      <RouterLink
-        v-for="item in navItems"
-        :key="item.to"
-        :to="item.to"
-        class="block text-gray-600 hover:text-gray-800"
-      >
-        {{ item.name }}
-      </RouterLink>
+      <template v-for="item in navItems">
+        <RouterLink
+          v-if="item.to"
+          :key="item.to"
+          :to="item.to"
+          class="block text-gray-600 hover:text-gray-800"
+        >
+          {{ item.name }}
+        </RouterLink>
+        <a
+          v-else-if="item.href"
+          :key="item.href"
+          :href="item.href"
+          target="_blank"
+                   rel="noopener noreferrer"
+          class="block text-gray-600 hover:text-gray-800"
+        >
+          {{ item.name }}
+        </a>
+      </template>
     </div>
   </nav>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { useSettingStore } from '@/stores/settingStore';
 import { createNavItems } from '@/config/navConfig';
 
 const route = useRoute();
 const isMenuOpen = ref(false);
 
-// 获取设置store实例
-const settingStore = useSettingStore();
-// 当前招生年份
-const currentAdmissionYear = ref(new Date().getFullYear()); // Initialize with current year as fallback
+// 计算当前招生年份
+// 下半年（7月1日至12月31日）显示当前年份+1
+// 上半年（1月1日至6月30日）显示当前年份
+const currentAdmissionYear = computed(() => {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const currentMonth = now.getMonth(); // 0-11，0表示1月
+  
+  // 如果是下半年（7月及以后，即月份>=6），返回当前年份+1
+  // 如果是上半年（1-6月，即月份<6），返回当前年份
+  return currentMonth >= 6 ? currentYear + 1 : currentYear;
+});
+
 // 将 navItems 改为 computed 属性
 const navItems = computed(() => createNavItems(currentAdmissionYear.value));
-
-// 初始化时获取年份数据
-onMounted(async () => {
-  try {
-    await settingStore.fetchYear();
-    currentAdmissionYear.value = settingStore.year.year;
-  } catch (error) {
-    console.error('Failed to fetch year:', error);
-  }
-});
 
 // 根据路由路径设置导航栏背景颜色
 const navStyle = computed(() => {

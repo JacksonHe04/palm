@@ -12,6 +12,8 @@
         </RouterLink> -->
         <a
           href="https://pcnk1dkqbzfp.feishu.cn/share/base/form/shrcnAguN1pWEXRdKStw0KgzV2d"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <el-button type="primary" size="large"
             >申请加入我们</el-button

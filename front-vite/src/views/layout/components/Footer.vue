@@ -17,7 +17,7 @@
 
       <div class="mt-8 sm:mt-10 border-t border-white pt-5 sm:pt-10">
         <p class="text-center text-gray-500">
-          CopyRight © 何锦诚 | 刘宇轩 | 戴雨成 | 胡瀚 <br class="md:hidden">2025 All rights reserved.
+          CopyRight © <a href="https://inon.space" target="_blank" rel="noopener noreferrer" class="text-blue-500">何锦诚</a> | 刘宇轩 | 戴雨成 | 胡瀚 <br class="md:hidden">2025 All rights reserved.
         </p>
         <p class="text-center text-gray-500 mt-3">
           东南大学 2025 年创业实践项目作品
@@ -44,11 +44,6 @@ export default {
             {
               name: '个人项目',
               url: 'https://github.com/JacksonHe04',
-              // icon: 'i iconfont icon-github'
-            },
-            {
-              name: 'Gitee 仓库',
-              url: 'https://gitee.com/JacksonHe04/PalmAdmissionsSystem',
               // icon: 'i iconfont icon-github'
             },
             {

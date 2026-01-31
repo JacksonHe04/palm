@@ -226,15 +226,15 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const userStore = useUserStore();
   
-  // 如果是首次加载，尝试从localStorage恢复用户状态
-  if (!userStore.isInitialized) {
-    await userStore.initializeFromStorage();
-  }
-  
   // 需要登录的路由
   const requiresAuth = to.path.startsWith('/manage');
   
   if (requiresAuth) {
+    // 只在需要认证的路由时才初始化用户状态，避免首页加载时发起网络请求
+    if (!userStore.isInitialized) {
+      await userStore.initializeFromStorage();
+    }
+    
     // 检查是否登录且会话有效
     if (userStore.isAuthenticated && userStore.isValidSession) {
       next();
