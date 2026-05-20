@@ -33,75 +33,69 @@ footer {
 }
 </style>
 
-<script>
-export default {
-  data() {
-    return {
-      footerSections: [
-        {
-          title: '项目开源',
-          links: [
-            {
-              name: '个人项目',
-              url: 'https://github.com/JacksonHe04',
-              // icon: 'i iconfont icon-github'
-            },
-            {
-              name: 'GitHub 仓库',
-              url: 'https://github.com/JacksonHe04/PalmAdmissionsSystem',
-              // icon: 'i iconfont icon-github'
-            }
-          ]
-        },
-        {
-          title: '联系我们',
-          links: [
-            {
-              name: '联系管理员',
-              url: '/contact'
-            },
-            {
-              name: '联系开发者',
-              url: '/contact'
-            }
-          ]
-        },
-        {
-          title: '更多网站',
-          links: [
-            {
-              name: '东南大学官网',
-              url: 'https://www.seu.edu.cn/'
-            },
-            {
-              name: '东南大学计算机学院',
-              url: 'https://cs.seu.edu.cn/'
-            },
-            {
-              name: '东大计软智常用网址',
-              url: 'https://seucseweb.github.io/'
-            }
-          ]
-        },
-        {
-          title: '关于 PALM',
-          links: [
-            {
-              name: 'PALM 实验室',
-              url: 'https://palm.seu.edu.cn/'
-            },
-            {
-              name: '研究生申请指南',
-              url: 'https://palm.seu.edu.cn/application.html'
-            },
-            {
-              name: '实验室成员',
-              url: 'https://palm.seu.edu.cn/members.html'
-            }
-          ]
-        }
-      ]
-    };
+<script setup>
+import { PALM_BASE_URL } from '@/config/baseUrl';
+
+const footerSections = [
+  {
+    title: '项目开源',
+    links: [
+      {
+        name: '个人项目',
+        url: 'https://github.com/JacksonHe04',
+      },
+      {
+        name: 'GitHub 仓库',
+        url: 'https://github.com/JacksonHe04/PalmAdmissionsSystem',
+      }
+    ]
+  },
+  {
+    title: '联系我们',
+    links: [
+      {
+        name: '联系管理员',
+        url: '/contact'
+      },
+      {
+        name: '联系开发者',
+        url: '/contact'
+      }
+    ]
+  },
+  {
+    title: '更多网站',
+    links: [
+      {
+        name: '东南大学官网',
+        url: 'https://www.seu.edu.cn/'
+      },
+      {
+        name: '东南大学计算机学院',
+        url: 'https://cs.seu.edu.cn/'
+      },
+      {
+        name: '东大计软智常用网址',
+        url: 'https://seucseweb.github.io/'
+      }
+    ]
+  },
+  {
+    title: '关于 PALM',
+    links: [
+      {
+        name: 'PALM 实验室',
+        url: PALM_BASE_URL
+      },
+      {
+        name: '研究生申请指南',
+        url: `${PALM_BASE_URL}application.html`
+      },
+      {
+        name: '实验室成员',
+        url: `${PALM_BASE_URL}members.html`
+      }
+    ]
   }
-};
+];
 </script>

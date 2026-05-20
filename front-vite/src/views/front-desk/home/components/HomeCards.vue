@@ -1,15 +1,15 @@
 <template>
   <div class="cards mt-0">
-    <a href="https://palm.seu.edu.cn/application.html" target="_blank">
+    <a :href="`${PALM_BASE_URL}application.html`" target="_blank">
       <div class="stats-card h-full">
-        <div class="stats-number">{{ currentAdmissionYear }}<br />Join Us</div>
+        <div class="stats-number">Join Us</div>
         <div>请阅读PALM实验室招生说明</div>
         <div class="mt-2 read">点击阅读</div>
       </div>
     </a>
 
     <div class="small-cards-list">
-      <a href="https://palm.seu.edu.cn" target="_blank">
+      <a :href="PALM_BASE_URL" target="_blank">
         <div class="horizontal-card">
           <div class="flex justify-center">
             <!-- <div
@@ -44,39 +44,31 @@
 
 <script setup>
 import { ref } from "vue";
+import { PALM_BASE_URL } from '@/config/baseUrl';
 
 // 当前招生年份 - 使用默认值，避免首页加载时发起网络请求
 const currentAdmissionYear = ref("2025");
-
-// const bubbleItems = ref([
-//   "🤖 Machine Learning",
-//   "🔍 Pattern Recognition",
-//   "🔨 Data Mining",
-//   "👓 Computer Vision",
-//   "✏️ Natural Language Processing",
-//   "💻 ......",
-// ]);
 
 const smallCards = ref([
   {
     icon: "👥",
     title: "PALM 实验室简介",
-    href: "https://palm.seu.edu.cn/home.html",
+    href: `${PALM_BASE_URL}home.html`,
   },
   {
     icon: "👩‍🎓",
     title: "研究队伍及人才培养",
-    href: "https://palm.seu.edu.cn/members.html",
+    href: `${PALM_BASE_URL}members.html`,
   },
   {
     icon: "🎓",
     title: "科学研究及主要成果",
-    href: "https://palm.seu.edu.cn/publication.html",
+    href: `${PALM_BASE_URL}publication.html`,
   },
   {
     icon: "📚️",
     title: "科研资源共享",
-    href: "https://palm.seu.edu.cn/projects.html",
+    href: `${PALM_BASE_URL}projects.html`,
   },
 ]);
 </script>

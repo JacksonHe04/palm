@@ -13,9 +13,5 @@ interface NavItem {
  * @returns 导航菜单项数组
  */
 export const createNavItems = (currentYear: number = new Date().getFullYear()) => {
-    return [
-    { name: 'Home', to: '/home' },
-    { name: 'Contact Us', to: '/contact' },
-    { name: `${currentYear} Join Us`, href: 'https://palm.seu.edu.cn/application.html' },
-  ]
+    return []
 }
