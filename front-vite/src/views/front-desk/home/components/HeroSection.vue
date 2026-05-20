@@ -11,7 +11,7 @@
           <el-button type="primary" size="large">申请加入我们</el-button>
         </RouterLink> -->
         <a
-          href="https://seu-palm.feishu.cn/wiki/KuyTwFH6miWCckkbJdrcIVoTnih"
+          href="https://seu-palm.feishu.cn/wiki/PgEFwrnPvi9pZwkfCmQcYnKWnbe"
           target="_blank"
           rel="noopener noreferrer"
         >
