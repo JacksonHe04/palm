@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd front-vite && pnpm install && pnpm build",
+  "outputDirectory": "front-vite/dist",
+  "installCommand": "cd front-vite && pnpm install"
+}
