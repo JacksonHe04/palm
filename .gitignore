@@ -3,3 +3,4 @@ __pycache__/
 /back-django/static_root
 /archive
 /resourses
+.git.bak
