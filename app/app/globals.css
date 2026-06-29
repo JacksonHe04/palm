@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-color: #3b82f6;
+  --secondary-color: #1f2937;
+  --text-color: #6b7280;
+  --hover-bg-color: wheat;
+  --white-color: white;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-serif), "Noto Serif SC", serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background-image: url('/home-bg-m.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--foreground);
+  font-family: var(--font-serif), "Noto Serif SC", Georgia, serif;
+}
+
+/* 英雄区域样式 */
+.hero-section {
+  background: transparent !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
+/* HeroSection 样式 */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 48px;
+  line-height: 1.2;
+  color: #1f2937;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #6b7280;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.hero-image {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+}
+
+/* HomeCards 样式 */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.stats-card {
+  background: #1f2937;
+  color: white;
+  padding: 32px;
+  border-radius: 16px;
+  transition: all 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stats-card:hover {
+  background: #2d3748;
+  transform: translateY(-2px);
+}
+
+.stats-number {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.small-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.horizontal-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  transition: all 0.3s;
+}
+
+.horizontal-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.small-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.small-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 20px 16px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.small-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.card-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0.15));
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.small-card:hover .card-icon-wrapper {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(59, 130, 246, 0.25));
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+  letter-spacing: 0.01em;
+}
+
+.join-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: #fde68a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stats-card:hover .join-cta {
+  gap: 10px;
+}
+
+.lab-title {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+
+.lab-subtitle {
+  font-size: 14px;
+  color: #4b5563;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
