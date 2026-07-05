@@ -1,5 +1,15 @@
 # ==========================================
-# 1. Agent 运行时与私有数据 (Agent & Local)
+# 1. 项目专属的特有规则 (Project Specific)
+# ==========================================
+*.pyc
+__pycache__/
+/back-django/static_root
+/archive
+/resourses
+.git.bak
+
+# ==========================================
+# 2. Agent 运行时与私有数据 (Agent & Local)
 # ==========================================
 native/
 /local
@@ -14,7 +24,7 @@ scripts/
 .playwright-cli/
 
 # ==========================================
-# 2. 依赖与环境 (Dependencies & Env)
+# 3. 依赖与环境 (Dependencies & Env)
 # ==========================================
 node_modules/
 .pnpm-store/
@@ -24,41 +34,34 @@ node_modules/
 !.env.example
 
 # ==========================================
-# 3. 构建输出与缓存 (Build Output & Cache)
+# 4. 构建输出与缓存 (Build Output & Cache)
 # ==========================================
 .next/
 out/
 dist/
+dist-ssr/
 build/
 .vercel/
 *.tsbuildinfo
 next-env.d.ts
 
 # ==========================================
-# 4. 系统与编辑器 (OS & IDE)
+# 5. 系统与编辑器 (OS & IDE)
 # ==========================================
 .DS_Store
 Thumbs.db
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 .idea/
 *.sw?
 
 # ==========================================
-# 5. 日志与测试 (Logs & Testing)
+# 6. 日志与测试 (Logs & Testing)
 # ==========================================
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 coverage/
-
-# ==========================================
-# 6. 项目专属特有规则 (Project Specific)
-# ==========================================
-*.pyc
-__pycache__/
-/back-django/static_root
-/archive
-/resourses
-.git.bak
