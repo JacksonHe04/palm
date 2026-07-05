@@ -1,4 +1,45 @@
-<h1 align="center">东南大学 PALM 实验室研究生招生管理系统</h1>
+<h1 align="center">东南大学 PALM 实验室</h1>
+
+<p align="center">
+  <img src="./app/public/palm_logo_cicle.png" width="120" alt="PALM Logo" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16.2-000000?style=flat-square&logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react" alt="React" />
+  <img src="https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" />
+</p>
+
+## PALM Lab 官网
+
+PALM（PAttern Learning and Mining）实验室隶属东南大学计算机科学与工程学院，本仓库的 **`app/`** 目录是实验室官方公开展示站源码，部署于 [palmlab.cn](https://palmlab.cn)。
+
+### 快速开始
+
+```bash
+cd app
+pnpm install
+pnpm dev      # http://localhost:3000
+pnpm build
+pnpm start
+```
+
+Vercel 部署时将 **Root Directory** 设为 `app` 即可。
+
+### 目录说明
+
+| 目录 | 说明 |
+|------|------|
+| `app/` | **生产** — Next.js 公开展示站 |
+| `front-vite/` | 归档 — 旧 AMS 前端（Vue），不再部署 |
+| `back-django/` | 归档 — 旧 AMS 后端（Django），不再部署 |
+| `archive/` | 本地归档（已 gitignore） |
+
+---
+
+<h2 align="center">研究生招生管理系统（AMS，已归档）</h2>
 
 <p align="center">
   <img src="./front-vite/public/csa_logo.png" width="200" alt="CSA Logo" style="margin-right: 20px" />
@@ -14,6 +55,8 @@
 </p>
 
 ## 📖 项目简介
+
+> **注意**：AMS 前后端已不再用于生产环境，代码保留在 `front-vite/` 与 `back-django/` 供参考。当前生产部署的是 `app/` 目录下的 Next.js 官网。
 
 东南大学 PALM 实验室研究生招生管理系统 (PALM AMS - Pattern Learning and Mining Lab Admissions Management System) 是一个现代化的教育机构招生管理平台。系统采用前后端分离架构设计，为 PALM 实验室提供完整的招生流程管理、学生信息管理、面试评分、数据统计分析等功能，致力于提升招生工作效率，优化管理流程。
 
@@ -104,8 +147,8 @@
 #### 1. 克隆项目
 
 ```bash
-git clone https://github.com/JacksonHe04/palm-ams.git
-cd palm-ams
+git clone https://github.com/JacksonHe04/palm.git
+cd palm
 ```
 
 #### 2. 前端环境配置
@@ -420,8 +463,8 @@ uwsgi --ini palm.ini
 ## 🔗 相关链接
 
 - [PALM 实验室官网](https://palmlab.cn)
-- [项目在线演示](https://palm-ams.vercel.app)
-- [问题反馈](https://github.com/JacksonHe04/palm-ams/issues)
+- [GitHub 仓库](https://github.com/JacksonHe04/palm)
+- [问题反馈](https://github.com/JacksonHe04/palm/issues)
 
 ## 📞 联系方式
 

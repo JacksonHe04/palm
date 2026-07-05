@@ -1,49 +1,40 @@
-# PALM Lab - 东南大学模式学习与挖掘实验室
+# PALM Lab Website
 
-PALM（PAttern Learning and Mining）实验室隶属东南大学计算机科学与工程学院，坐落于九龙湖校区计算机楼，是一个专注于数据挖掘与知识发现、机器学习、模式识别及相关领域的基础性、前沿性、创新性研究机构。
+Official public website of the PALM (PAttern Learning and Mining) Lab at Southeast University.
 
-本项目是 PALM 实验室的官方招生网站。
+Source for [palmlab.cn](https://palmlab.cn). Lives in the `app/` directory of the [palm](https://github.com/JacksonHe04/palm) monorepo.
 
-## 技术栈
+## Tech Stack
 
-- **框架**: Next.js 16.2.6
-- **UI**: React 19.2.4
-- **样式**: Tailwind CSS v4
-- **图标**: Lucide React
-- **语言**: TypeScript
+- **Framework**: Next.js 16.2
+- **UI**: React 19, Lucide React
+- **Styling**: Tailwind CSS v4
+- **Language**: TypeScript
 
-## 快速开始
+## Quick Start
 
 ```bash
-# 安装依赖
 pnpm install
-
-# 开发模式
-pnpm dev
-
-# 生产构建
+pnpm dev      # http://localhost:3000
 pnpm build
-
-# 启动生产服务器
 pnpm start
-
-# 代码检查
 pnpm lint
 ```
 
-## 项目结构
+## Project Structure
 
 ```
-palm-lab/
+app/
 ├── app/
-│   ├── components/     # React 组件
-│   ├── constants/      # 常量配置
-│   ├── layout.tsx      # 根布局
-│   └── page.tsx        # 首页
-├── public/             # 静态资源（图片等）
+│   ├── components/     # React components
+│   ├── constants/      # Shared URLs and config
+│   ├── layout.tsx      # Root layout
+│   └── page.tsx        # Home page
+├── public/             # Static assets
 └── ...
 ```
 
-## 开发
+## Conventions
 
-开发服务器运行在 `http://localhost:3000`。
+- Manage external links in `app/constants/urls.ts`
+- Legacy AMS code (`front-vite/`, `back-django/`) is archived and not deployed
