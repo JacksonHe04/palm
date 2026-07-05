@@ -1,3 +1,4 @@
+native/
 *.pyc
 __pycache__/
 /back-django/static_root
