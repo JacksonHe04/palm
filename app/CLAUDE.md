@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 PALM Lab official public website, built with Next.js 16 + React 19 + Tailwind CSS 4.
 
-This `app/` directory is the **production** entry point for [palmlab.cn](https://palmlab.cn). Legacy AMS code (`front-vite/`, `back-django/`) in the parent repo is archived and not deployed.
+This `app/` directory is the **production** entry point for [palmlab.cn](https://palmlab.cn). Legacy AMS code (`web/`, `server/`) in the parent repo is archived and not deployed.
 
 ## Commands
 

@@ -1,7 +1,7 @@
 native/
 *.pyc
 __pycache__/
-/back-django/static_root
+/server/static_root
 /archive
 /resourses
 .git.bak

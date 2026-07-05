@@ -33,8 +33,8 @@ Vercel 部署时将 **Root Directory** 设为 `app` 即可。
 | 目录 | 说明 |
 |------|------|
 | `app/` | **生产** — Next.js 公开展示站 |
-| `front-vite/` | 归档 — 旧 AMS 前端（Vue），不再部署 |
-| `back-django/` | 归档 — 旧 AMS 后端（Django），不再部署 |
+| `web/` | 归档 — 旧 AMS 前端（Vue），不再部署 |
+| `server/` | 归档 — 旧 AMS 后端（Django），不再部署 |
 | `archive/` | 本地归档（已 gitignore） |
 
 ---
@@ -42,8 +42,8 @@ Vercel 部署时将 **Root Directory** 设为 `app` 即可。
 <h2 align="center">研究生招生管理系统（AMS，已归档）</h2>
 
 <p align="center">
-  <img src="./front-vite/public/csa_logo.png" width="200" alt="CSA Logo" style="margin-right: 20px" />
-  <img src="./front-vite/public/palm_logo.png" width="200" alt="PALM Logo" />
+  <img src="./web/public/csa_logo.png" width="200" alt="CSA Logo" style="margin-right: 20px" />
+  <img src="./web/public/palm_logo.png" width="200" alt="PALM Logo" />
 </p>
 
 <p align="center">
@@ -56,7 +56,7 @@ Vercel 部署时将 **Root Directory** 设为 `app` 即可。
 
 ## 📖 项目简介
 
-> **注意**：AMS 前后端已不再用于生产环境，代码保留在 `front-vite/` 与 `back-django/` 供参考。当前生产部署的是 `app/` 目录下的 Next.js 官网。
+> **注意**：AMS 前后端已不再用于生产环境，代码保留在 `web/` 与 `server/` 供参考。当前生产部署的是 `app/` 目录下的 Next.js 官网。
 
 东南大学 PALM 实验室研究生招生管理系统 (PALM AMS - Pattern Learning and Mining Lab Admissions Management System) 是一个现代化的教育机构招生管理平台。系统采用前后端分离架构设计，为 PALM 实验室提供完整的招生流程管理、学生信息管理、面试评分、数据统计分析等功能，致力于提升招生工作效率，优化管理流程。
 
@@ -154,7 +154,7 @@ cd palm
 #### 2. 前端环境配置
 
 ```bash
-cd front-vite
+cd web
 pnpm install
 # 或使用 npm install
 ```
@@ -162,7 +162,7 @@ pnpm install
 #### 3. 后端环境配置
 
 ```bash
-cd back-django
+cd server
 pip install -r requirements.txt
 ```
 
@@ -173,7 +173,7 @@ pip install -r requirements.txt
 CREATE DATABASE palm_apply CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-2. 修改 `./back-django/ApplicationSystem/settings.py` 中的数据库配置：
+2. 修改 `./server/ApplicationSystem/settings.py` 中的数据库配置：
 ```python
 DATABASES = {
     'default': {
@@ -189,7 +189,7 @@ DATABASES = {
 
 3. 执行数据库迁移：
 ```bash
-cd back-django
+cd server
 python manage.py makemigrations
 python manage.py migrate
 ```
@@ -198,13 +198,13 @@ python manage.py migrate
 
 **启动后端服务：**
 ```bash
-cd back-django
+cd server
 python manage.py runserver 8000
 ```
 
 **启动前端服务：**
 ```bash
-cd front-vite
+cd web
 pnpm dev
 # 或 npm run dev
 ```
@@ -215,7 +215,7 @@ pnpm dev
 
 #### 前端构建
 ```bash
-cd front-vite
+cd web
 pnpm build
 ```
 
@@ -225,8 +225,8 @@ pnpm build
 ## 📁 项目结构
 
 ```
-palm-ams/
-├── front-vite/                 # 前端项目 (Vue 3 + TypeScript)
+palm/
+├── web/                 # 前端项目 (Vue 3 + TypeScript)
 │   ├── src/
 │   │   ├── apis/              # API 接口定义
 │   │   ├── components/        # 公共组件
@@ -242,7 +242,7 @@ palm-ams/
 │   ├── public/                # 静态资源
 │   ├── package.json
 │   └── vite.config.js         # Vite 配置
-├── back-django/               # 后端项目 (Django)
+├── server/               # 后端项目 (Django)
 │   ├── Api/                   # API 应用模块
 │   │   ├── apply/             # 申请管理
 │   │   ├── auth/              # 身份验证
@@ -425,16 +425,16 @@ git commit -m "docs: 更新文档"
 #### 开发环境
 ```bash
 # 前端
-cd front-vite && pnpm dev
+cd web && pnpm dev
 
 # 后端
-cd back-django && python manage.py runserver
+cd server && python manage.py runserver
 ```
 
 #### 生产环境
 ```bash
 # 前端构建
-cd front-vite && pnpm build
+cd web && pnpm build
 
 # 后端部署 (使用 uWSGI + Nginx)
 uwsgi --ini palm.ini

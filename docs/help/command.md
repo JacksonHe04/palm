@@ -2,7 +2,7 @@
 ``` bash
 source ~/.bashrc
 conda activate palm
-cd /home/ubuntu/palm-ams/back-django
+cd /home/ubuntu/palm/server
 python manage.py runserver 0.0.0.0:8001
 ```
 control + c 关闭
@@ -11,8 +11,8 @@ control + c 关闭
 ``` bash
 source ~/.bashrc
 conda activate palm
-cd /home/ubuntu/palm-ams/back-django
-/home/ubuntu/anaconda3/envs/palm/bin/uwsgi --ini /home/ubuntu/palm-ams/back-django/palm.ini
+cd /home/ubuntu/palm/server
+/home/ubuntu/anaconda3/envs/palm/bin/uwsgi --ini /home/ubuntu/palm/server/palm.ini
 sudo nginx -s reload
 ```
 

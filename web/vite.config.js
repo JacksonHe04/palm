@@ -31,7 +31,7 @@ export default defineConfig({
     // 添加base配置，指定静态资源的基础路径
     assetsDir: '',
     // 设置生成的静态资源的存放路径前缀
-    outDir: '../back-django/static',
+    outDir: '../server/static',
     emptyOutDir: true,
     // 将 index.html 输出到 template 目录
     rollupOptions: {
@@ -57,7 +57,7 @@ export default defineConfig({
           return `assets/${extType}/[name].[hash][extname]`
         },
         // 将 index.html 输出到上级目录的 template 文件夹
-        dir: '../back-django/static',
+        dir: '../server/static',
         paths: {
           'index.html': '../template/index.html'
         },

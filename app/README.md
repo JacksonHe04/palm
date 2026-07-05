@@ -37,4 +37,4 @@ app/
 ## Conventions
 
 - Manage external links in `app/constants/urls.ts`
-- Legacy AMS code (`front-vite/`, `back-django/`) is archived and not deployed
+- Legacy AMS code (`web/`, `server/`) is archived and not deployed

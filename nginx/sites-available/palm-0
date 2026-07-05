@@ -48,7 +48,7 @@ server {
     }
 
     location /static/ {
-        alias /home/ubuntu/palm-ams/back-django/static/;
+        alias /home/ubuntu/palm/server/static/;
         add_header Cache-Control "public, max-age=31536000";
 
         types {
