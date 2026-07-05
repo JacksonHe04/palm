@@ -1,12 +1,11 @@
-# Gitignore 规范统一方案
+# Gitignore 规范统一方案 (标准层级与顺序调整)
 
-## 方案说明
-全量统一 6 个核心项目的 `.gitignore` 模板，分为 6 大模块：
-1. Agent 运行时与私有数据
-2. 依赖与环境
-3. 构建输出与缓存
-4. 系统与编辑器
-5. 日志与测试
-6. 项目专属特有规则
+## 规范顺序
+1. 项目专属的特有规则
+2. Agent 的运行时与私有数据
+3. 依赖与环境
+4. 构建输出与缓存
+5. 系统与编辑器
+6. 日志与测试
 
-在 PALM 中完整保留了 `*.pyc`、`__pycache__/`、`/back-django/static_root`、`/archive`、`/resourses`、`.git.bak` 等特定属性。
+其中 3 ~ 6 模块全量跨仓库一致。PALM 的第 1 模块指定为 `*.pyc`、`__pycache__/`、`/back-django/static_root`、`/archive`、`/resourses`、`.git.bak`。
