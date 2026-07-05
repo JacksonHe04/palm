@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { URLs } from '@/app/constants/urls';
 
 export default function HeroSection() {

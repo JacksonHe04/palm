@@ -13,7 +13,7 @@ export const URLs = {
   // GitHub
   github: {
     personal: 'https://github.com/JacksonHe04',
-    repository: 'https://github.com/JacksonHe04/palm-lab',
+    repository: 'https://github.com/JacksonHe04/palm',
   },
 
   // 东南大学

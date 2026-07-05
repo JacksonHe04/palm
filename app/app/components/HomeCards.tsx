@@ -1,6 +1,5 @@
 import { Users, GraduationCap, BookOpen, Library, ArrowRight } from 'lucide-react';
-
-const PALM_BASE_URL = 'http://8.149.133.61/';
+import { PALM_BASE_URL } from '@/app/constants/urls';
 
 const smallCards = [
   {
