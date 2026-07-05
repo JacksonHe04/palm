@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Noto_Serif_SC } from "next/font/google";
+import { Providers } from "@/components/providers";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -24,8 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
-      <body className={`min-h-full flex flex-col ${jetbrainsMono.variable} ${notoSerifSC.variable}`}>{children}</body>
+    <html lang="zh-CN" suppressHydrationWarning>
+      <body className={`min-h-full flex flex-col ${jetbrainsMono.variable} ${notoSerifSC.variable}`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
