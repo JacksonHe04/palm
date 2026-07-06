@@ -10,7 +10,6 @@ native/
 scripts/
 *_local/
 .agents/
-!.agents/docs/
 .claude/
 .trae/
 .cursor/
